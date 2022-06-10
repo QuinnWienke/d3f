@@ -1,0 +1,128 @@
+~/PaleSpicyLocus$ git commit -m "about.txt"
+fatal: not a git repository (or any parent up to mount point /home/runner)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+~/PaleSpicyLocus$ cd gitDay2
+~/PaleSpicyLocus/gitDay2$ git commit -m "about.txt"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'runner@e38b8fbffbf7.(none)')
+~/PaleSpicyLocus/gitDay2$ git config --global user.email "qwienke2019@outlook.com"
+~/PaleSpicyLocus/gitDay2$ git config --global user.name "QuinnWienke"
+~/PaleSpicyLocus/gitDay2$ git commit -m "about.txt"
+[master 690297a] about.txt
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+~/PaleSpicyLocus/gitDay2$ git remote rm origin
+~/PaleSpicyLocus/gitDay2$ git remote add origin https://github.com/QuinnWienke/d3f.git
+~/PaleSpicyLocus/gitDay2$ git push -u origin master
+Username for 'https://github.com': QuinnWienke
+Password for 'https://QuinnWienke@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/QuinnWienke/d3f.git/'
+~/PaleSpicyLocus/gitDay2$ 
+~/PaleSpicyLocus/gitDay2$ gh
+gh: command not installed, but was located via Nix.
+Would you like to run gh from Nix? [Yn]: n
+~/PaleSpicyLocus$ git push -u origin master
+fatal: not a git repository (or any parent up to mount point /home/runner)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+~/PaleSpicyLocus$ git remote add origin https://github.com/QuinnWienke/d3f.git
+fatal: not a git repository (or any parent up to mount point /home/runner)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+~/PaleSpicyLocus$ git checkout -b "newbranch"
+fatal: not a git repository (or any parent up to mount point /home/runner)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+~/PaleSpicyLocus$ git init
+Initialized empty Git repository in /home/runner/PaleSpicyLocus/.git/
+~/PaleSpicyLocus$ git checkout -b "newbranch"
+Switched to a new branch 'newbranch'
+~/PaleSpicyLocus$ git remote add orign https://github.com/QuinnWienke/d3f.git
+~/PaleSpicyLocus$ touch hobbies.txt
+~/PaleSpicyLocus$ git add .
+warning: adding embedded git repository: gitDay2
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint:   git submodule add <url> gitDay2
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint:   git rm --cached gitDay2
+hint: 
+hint: See "git help submodule" for more information.
+~/PaleSpicyLocus$ git commit -m <hobbies.txt>
+bash: syntax error near unexpected token `newline'
+~/PaleSpicyLocus$ git branch :
+fatal: ':' is not a valid branch name.
+~/PaleSpicyLocus$ git branch <newbranch> <gitDay2>
+bash: syntax error near unexpected token `<'
+~/PaleSpicyLocus$ git init -b main
+error: unknown switch `b'
+usage: git init [-q | --quiet] [--bare] [--template=<template-directory>] [--shared[=<permissions>]] [<directory>]
+
+    --template <template-directory>
+                          directory from which templates will be used
+    --bare                create a bare repository
+    --shared[=<permissions>]
+                          specify that the git repository is to be shared amongst several users
+    -q, --quiet           be quiet
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+
+~/PaleSpicyLocus$ git add . && git commit -m "initial commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'runner@1656493a8181.(none)')
+~/PaleSpicyLocus$ git config --global user.email "qwienke2019@outlook.com"
+~/PaleSpicyLocus$ git config --global user.name "QuinnWienke"
+~/PaleSpicyLocus$ git add . && git commit -m "initial commit"
+[newbranch (root-commit) 16f744c] initial commit
+ 5 files changed, 85 insertions(+)
+ create mode 100644 .replit
+ create mode 160000 gitDay2
+ create mode 100644 hobbies.txt
+ create mode 100644 index.js
+ create mode 100644 replit.nix
+~/PaleSpicyLocus$ --public
+^C
+~/PaleSpicyLocus$ --remote --public
+^C
+~/PaleSpicyLocus$ git init -b main
+error: unknown switch `b'
+usage: git init [-q | --quiet] [--bare] [--template=<template-directory>] [--shared[=<permissions>]] [<directory>]
+
+    --template <template-directory>
+                          directory from which templates will be used
+    --bare                create a bare repository
+    --shared[=<permissions>]
+                          specify that the git repository is to be shared amongst several users
+    -q, --quiet           be quiet
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+
+~/PaleSpicyLocus$ git push -origin master
+fatal: The current branch newbranch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream master newbranch
